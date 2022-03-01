@@ -8,4 +8,7 @@ import java.util.UUID;
 
 @Repository //Estereótipo do spring para transações com base de dados
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpotModel, UUID> {
+    boolean existsByLicensePlateCar(String licensePlateCar);
+    boolean existsByParkingSpotNumber(String parkingSpotNumber);
+    boolean existsByApartmentAndBlock(String apartment, String block); //quando se usa o "AND" pode passar dois parametros
 }
